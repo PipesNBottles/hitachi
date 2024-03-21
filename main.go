@@ -5,7 +5,37 @@ import (
 
 	"github.com/PipesNBottles/hitachi/question1"
 	"github.com/PipesNBottles/hitachi/question2"
+	"github.com/PipesNBottles/hitachi/question3"
+	"github.com/PipesNBottles/hitachi/question4"
 )
+
+func q4() {
+	lands := []string{"AEEA", "EAAAAAE", "EAEAE"}
+	for _, community := range lands {
+		fmt.Println(question4.FindMinGroceries(community))
+	}
+}
+
+func q3() {
+	phoneNumbers := []string{
+		"+1 (613)-995-0253",
+		"613-995-0253",
+		"1 613 995 0253",
+		"613.995.0253",
+		"+1 6(13)-995-0253",
+		"+1 61(3)-995-0253",
+		"613.99.50253",
+		"61-3-995-0253",
+	}
+	for _, phoneNumber := range phoneNumbers {
+		result, err := question3.Number(phoneNumber)
+		if err != nil {
+			fmt.Println(err)
+		} else {
+			fmt.Println(result)
+		}
+	}
+}
 
 func q2() {
 	nums := []int{1, 2, 3, 4, 5, 6, 7}
@@ -27,4 +57,6 @@ func q1() {
 func main() {
 	q1()
 	q2()
+	q3()
+	q4()
 }
